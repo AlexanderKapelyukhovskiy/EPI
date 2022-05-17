@@ -9,7 +9,6 @@ public class A_05_02_IncrementInteger {
         for (int i = list.size() - 1; i >= 0; i--) {
             if (list.get(i) == 9 && add == 1) {
                 list.set(i, 0);
-                add = 1;
             } else {
                 list.set(i, list.get(i) + add);
                 add = 0;
