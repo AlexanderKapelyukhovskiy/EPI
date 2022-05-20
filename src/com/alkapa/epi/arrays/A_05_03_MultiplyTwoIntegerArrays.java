@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class A_05_MultiplyTwoIntegerArrays {
+public class A_05_03_MultiplyTwoIntegerArrays {
     public static List<Integer> multiply(List<Integer> num1, List<Integer> num2) {
         int sign = num1.get(0) < 0 ^ num2.get(0) < 0 ? -1 : 1;
 
