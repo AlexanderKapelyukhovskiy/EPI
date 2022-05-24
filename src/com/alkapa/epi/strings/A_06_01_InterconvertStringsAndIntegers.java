@@ -53,12 +53,37 @@ public class A_06_01_InterconvertStringsAndIntegers {
         return isNegative ? -result : result;
     }
 
+    public static String intToString(int x) {
+        boolean isNegative = x < 0;
+
+        x = Math.abs(x);
+
+        StringBuilder sb = new StringBuilder();
+
+        do {
+            sb.append((char) ('0' + x % 10));
+            x /= 10;
+        } while (x != 0);
+
+        if (isNegative) {
+            sb.append('-');
+        }
+
+        return sb.reverse().toString();
+    }
+
+    public static int stringToInteger(String s) {
+        boolean isNegative = s.charAt(0) == '-';
+        return (isNegative ? -1 : 1) *
+                s.substring(isNegative ? 1 : 0).chars().reduce(0, (i, ch) -> i * 10 + ch - '0');
+    }
+
     public static void testToInteger(String s) {
-        System.out.println(String.format("%s -> %d", s, toInteger(s)));
+        System.out.println(String.format("%s -> %d", s, stringToInteger(s)));
     }
 
     public static void testToString(int x) {
-        System.out.println(String.format("%d -> %s", x, toString(x)));
+        System.out.println(String.format("%d -> %s", x, intToString(x)));
     }
 
     public static void main(String[] args) {
