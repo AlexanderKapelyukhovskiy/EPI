@@ -69,25 +69,12 @@ public class A_07_01_MergeTwoSortedLists {
     }
 
     public static void test(ListNode<Integer> L1, ListNode<Integer> L2) {
-        printList(L1);
-        printList(L2);
+        ListNode.printList(L1);
+        ListNode.printList(L2);
         ListNode<Integer> R = mergeTwoSortedListsV2(L1, L2);
         System.out.print("Result: ");
-        printList(R);
+        ListNode.printList(R);
         System.out.println("--------------");
-    }
-
-    public static void printList(ListNode<Integer> L) {
-        if (L == null) {
-            System.out.println("Empty List");
-            return;
-        }
-
-        while (L != null) {
-            System.out.print(L.data + ", ");
-            L = L.next;
-        }
-        System.out.println();
     }
 
     public static ListNode<Integer> createL1() {
