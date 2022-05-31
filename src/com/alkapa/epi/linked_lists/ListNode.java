@@ -37,6 +37,26 @@ public class ListNode<T> {
         System.out.println();
     }
 
+    public static ListNode<Integer> reverseList(ListNode<Integer> L) {
+        ListNode<Integer> R = null;
+        while (L != null) {
+            ListNode<Integer> t = L.next;
+            L.next = R;
+            R = L;
+            L = t;
+        }
+        return R;
+    }
+
+    public static ListNode<Integer> concat(ListNode<Integer> L1, ListNode<Integer> L2) {
+        ListNode dummyHead = L1;
+        while (L1.next != null) {
+            L1 = L1.next;
+        }
+        L1.next = L2;
+        return dummyHead;
+    }
+
     public static ListNode<Integer> createTestList(int size) {
         ListNode<Integer> dummyHead = new ListNode<>(0);
         ListNode<Integer> L1 = dummyHead;
