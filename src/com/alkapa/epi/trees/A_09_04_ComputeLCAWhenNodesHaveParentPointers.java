@@ -58,5 +58,4 @@ public class A_09_04_ComputeLCAWhenNodesHaveParentPointers {
 
         BinaryTree<Integer> lca = lca(root, node0, node1);
     }
-
 }
