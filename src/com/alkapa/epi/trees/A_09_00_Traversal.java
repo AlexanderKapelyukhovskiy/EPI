@@ -1,20 +1,23 @@
 package com.alkapa.epi.trees;
 
-
 public class A_09_00_Traversal {
     public static void treeTraversal(BinaryTreeNode<Integer> root) {
+        treeTraversal(root, false);
+    }
+
+    public static void treeTraversal(BinaryTreeNode<Integer> root, boolean convertToChar) {
         if (root == null) {
             return;
         }
 
-        System.out.println("Preorder: " + root.data);
-        treeTraversal(root.left);
-        System.out.println("Inorder: " + root.data);
-        treeTraversal(root.right);
-        System.out.println("Postorder: " + root.data);
+        System.out.println("Preorder: " + root.data + " " + (convertToChar && root.data != null ? (char) root.data.intValue() : ' '));
+        treeTraversal(root.left, convertToChar);
+        System.out.println("Inorder: " + root.data + " " + (convertToChar && root.data != null ? (char) root.data.intValue() : ' '));
+        treeTraversal(root.right, convertToChar);
+        System.out.println("Postorder: " + root.data + " " + (convertToChar && root.data != null ? (char) root.data.intValue() : ' '));
     }
 
-    public static void inorder (BinaryTreeNode<Integer> root) {
+    public static void inorder(BinaryTreeNode<Integer> root) {
         if (root == null) {
             return;
         }
@@ -24,7 +27,7 @@ public class A_09_00_Traversal {
         inorder(root.right);
     }
 
-    public static void preorder (BinaryTreeNode<Integer> root) {
+    public static void preorder(BinaryTreeNode<Integer> root) {
         if (root == null) {
             return;
         }
@@ -34,7 +37,7 @@ public class A_09_00_Traversal {
         preorder(root.right);
     }
 
-    public static void postorder (BinaryTreeNode<Integer> root) {
+    public static void postorder(BinaryTreeNode<Integer> root) {
         if (root == null) {
             return;
         }
