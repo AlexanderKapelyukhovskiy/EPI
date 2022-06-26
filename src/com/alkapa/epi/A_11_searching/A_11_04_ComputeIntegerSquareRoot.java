@@ -13,7 +13,7 @@ public class A_11_04_ComputeIntegerSquareRoot {
             int sqr = middle * middle;
             if (sqr < val) {
                 left = middle + 1;
-            } if (sqr == val) {
+            } else if (sqr == val) {
               return middle;
             } else {
                 right = middle-1;
