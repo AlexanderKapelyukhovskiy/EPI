@@ -38,5 +38,6 @@ public class A_11_09_FindTheMissingIPAddress {
                 return (candidateBucket << 16) | i;
             }
         }
+        return -1;
     }
 }
