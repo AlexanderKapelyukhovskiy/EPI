@@ -5,6 +5,10 @@ import java.util.Map;
 
 public class A_12_02_IsAnAnonymousLetterConstructible {
     public static boolean isAnAnonymousLetterConstructibleFromMagazine(String letterText, String magazineText) {
+        if (letterText.length() > magazineText.length()) {
+            return false;
+        }
+
         Map<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < letterText.length(); ++i) {
@@ -37,5 +41,6 @@ public class A_12_02_IsAnAnonymousLetterConstructible {
         test("I will find you", "I think I will find some body like you");
         test("I will find you", "I thought I would find some one like you");
         test("I will find you", "I thought I would find you");
+        test("I will find you", "I will");
     }
 }
