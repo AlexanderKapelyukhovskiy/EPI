@@ -1,5 +1,7 @@
 package com.alkapa.epi.A_07_linked_lists;
 
+import java.util.Random;
+
 public class ListNode<T> {
     public T data;
     public ListNode<T> next;
@@ -58,11 +60,17 @@ public class ListNode<T> {
     }
 
     public static ListNode<Integer> createTestList(int size) {
+        return  createTestList(size, false);
+    }
+
+    public static ListNode<Integer> createTestList(int size, boolean random) {
         ListNode<Integer> dummyHead = new ListNode<>(0);
         ListNode<Integer> L1 = dummyHead;
+        Random r = new Random();
+
 
         for (int i = 1; i < size; ++i) {
-            L1.next = new ListNode<>(i);
+            L1.next = new ListNode<>(random ? r.nextInt(100) : i);
             L1 = L1.next;
         }
 
