@@ -39,28 +39,6 @@ public class A_14_02_FindTheKeyGreaterThanAGivenValueInABst {
     }
 
     public static void main (String[] args) {
-        BinaryTreeNode<Integer> bstTree
-                = new BinaryTreeNode<>(19,
-                new BinaryTreeNode<>(7,
-                        new BinaryTreeNode<>(3,
-                            new BinaryTreeNode<>(2, null, null),
-                            new BinaryTreeNode<>(5, null, null)),
-                        new BinaryTreeNode<>(11,
-                        null,
-                            new BinaryTreeNode<>(17,
-                                    new BinaryTreeNode<>(13, null, null),
-                                    null))),
-                new BinaryTreeNode<>(43,
-                        new BinaryTreeNode<>(23,
-                        null,
-                            new BinaryTreeNode<>(37,
-                                new BinaryTreeNode<>(29,
-                                null,
-                                    new BinaryTreeNode<>(31, null, null)),
-                                new BinaryTreeNode<>(41, null, null))),
-                        new BinaryTreeNode<>(47, null,
-                            new BinaryTreeNode<>(53, null, null))));
-
-        System.out.println(findFirstBiggerThanK( bstTree, 23).data);
+        System.out.println(findFirstBiggerThanK( BinaryTreeNode.createBSTTree(), 23).data);
     }
 }
