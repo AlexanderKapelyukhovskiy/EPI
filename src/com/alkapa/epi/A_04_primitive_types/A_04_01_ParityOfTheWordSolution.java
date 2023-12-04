@@ -3,9 +3,9 @@ package com.alkapa.epi.A_04_primitive_types;
 /**
  * <h3>4.1 Computing the parity of a word</h3>
  * <p>
- *  The parity of a binary word is 1 if the number of 1s in the word is odd (1,3,..); otherwise, it is 0.
- *  For example, the parity of 10001000 is 0. Parity checks are used to detect single bit error in data
- *  storage and communication.
+ * The parity of a binary word is 1 if the number of 1s in the word is odd (1,3,..); otherwise, it is 0.
+ * For example, the parity of 10001000 is 0. Parity checks are used to detect single bit error in data
+ * storage and communication.
  * </p>
  */
 public class A_04_01_ParityOfTheWordSolution {
@@ -13,6 +13,7 @@ public class A_04_01_ParityOfTheWordSolution {
     /**
      * The brute-force algorithm iteratively test the values of each bit while tracking the number 1s seen so far.
      * Since we only care if the number of 1s is even (2,4,..) or odd (1,3,..), we can store the number mod 2.
+     *
      * @param x sequence of words (4 words)
      * @return if this sequence of words has parity
      */
@@ -30,6 +31,7 @@ public class A_04_01_ParityOfTheWordSolution {
      * its lowest set bit erased.
      * <p>x = 00101100 -> x - 1 = 00101011 -> x & (x-1) = 00101100 & 00101011 = 00101000.</p>
      * Using this trick we can skip checking 0s between 1s.
+     *
      * @param x sequence of words (4 words)
      * @return if this sequence of words has parity
      */
@@ -64,6 +66,7 @@ public class A_04_01_ParityOfTheWordSolution {
      * <p>To avoid too big cache we precompute parity only for one word (0-65536). After getting parity for every word
      * in sequence we can easily get overall parity for sequence with help of xor operation for every parity </p>
      * <p>P[n] = p[0] ^ p[1] ^ ... ^ p[n]</p>
+     *
      * @param x sequence of words (4 words)
      * @return if this sequence of words has parity
      */
@@ -92,6 +95,7 @@ public class A_04_01_ParityOfTheWordSolution {
     /**
      * The most efficient log(n) solution for parity is based on fact that XOR of a group of bits is its parity.
      * <p>Parity of (b63, b62, ...,b1, b0) is parity of (b63, b62, ...,b32) XOR (b31, b32, ..., b0) </p>
+     *
      * @param x sequence of words (4 words)
      * @return if this sequence of words has parity
      */
