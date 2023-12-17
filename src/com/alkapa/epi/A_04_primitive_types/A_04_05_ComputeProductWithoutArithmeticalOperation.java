@@ -51,7 +51,7 @@ public class A_04_05_ComputeProductWithoutArithmeticalOperation {
      *
      * @param x
      * @param y
-     * @return sum of x and y
+     * @return addition of x and y
      */
     public static long bitwiseAdd(long x, long y) {
         return y == 0 ? x : bitwiseAdd(x ^ y, (x & y) << 1);
